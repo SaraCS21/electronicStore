@@ -1,6 +1,8 @@
 package com.example.demo.formedBy.service;
 
 
+import java.util.List;
+
 import com.example.demo.formedBy.model.FormedBy;
 import com.example.demo.formedBy.repository.IFormedBy;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +13,8 @@ public class FormedByService {
   @Autowired
   private IFormedBy formedByRepository;
 
-  public FormedBy read(String idComponentA, String idComponentB) {
-    return formedByRepository.read(idComponentA, idComponentB);
+  public List<FormedBy> read() {
+    return formedByRepository.read();
   }
 
   public void create(FormedBy formedBy) {

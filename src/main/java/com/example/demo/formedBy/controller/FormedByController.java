@@ -1,5 +1,7 @@
 package com.example.demo.formedBy.controller;
 
+import java.util.List;
+
 import com.example.demo.formedBy.model.FormedBy;
 import com.example.demo.formedBy.service.FormedByService;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +16,9 @@ public class FormedByController {
     this.formedByService = formedByService;
   }
 
-  @GetMapping("/formedBy/{idComponentA}/{idComponentB}")
-  public ResponseEntity<FormedBy> formedBy(@PathVariable String idComponentA, @PathVariable String idComponentB) {
-    return ResponseEntity.ok(formedByService.read(idComponentA, idComponentB));
+  @GetMapping("/formedBy")
+  public ResponseEntity<List<FormedBy>> formedBy() {
+    return ResponseEntity.ok(formedByService.read());
   }
 
   @PostMapping("/formedBy")
